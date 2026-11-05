@@ -1,8 +1,19 @@
-# LecNote: from understanding a slide to seeing the whole course
+# LecNote
 
-**LecNote is a macOS app for studying from lecture PDFs. During this hackathon I built its one-click pipeline that turns a course's slides into a knowledge structure and a formula sheet, every item traceable to the slide page it came from, running on Meta's Muse Spark 1.3 and Muse Wonder with code checks after every model call.**
+**Study material I can check, in the language I think in.**
 
-I'm a master's student learning in English, my second language. An AI summary that rephrases a lecture is hard to trust in a second language, so everything the pipeline produces points back to a slide page, and code checks that the quoted words are really there.
+I'm an international master's student, studying in English, my second language. Learning a course this way takes three steps: understand an unfamiliar idea, put it in my own words, and connect it with what came in other lectures. LecNote, my macOS app for lecture PDFs, is built around those steps: I can look up a phrase or ask AI about a sentence, formula or diagram with the lecture as context, and keep my own notes beside the slide.
+
+The third step is the hardest. By exam time a course is hundreds of slides, with no map of how they fit together, and a chatbot summary doesn't give me one I can trust: it rephrases the lecture, can't show where a claim came from, and in a second language I can't tell when it is wrong.
+
+For this hackathon I built that third step: a 22-stage pipeline on **Muse Spark 1.3** and **Muse Wonder** that reads every slide, plans a knowledge structure across all lectures, reviews it from four angles, and builds a formula sheet tied to its concepts. Every concept, quote and formula points to a lecture and page, and code checks it against the slides before it is kept.
+
+- **The model proposes, code verifies.** After every model call, code checks the answer against the slide text: every page read, titles on their page, page references real, quotes found on the cited page, formulas that render. What fails goes back to the model as a targeted re-read or repair task.
+- **Models review models, and need evidence.** Four review passes (coverage, lenses, fact-check, tour) look for problems. Code drops any finding whose evidence is not on its page; the rest go to a sceptical verifier before anything changes.
+- **The right Meta model for each job.** Spark 1.3 does the high-volume, multimodal page reading at low effort; Wonder does course-wide planning, drafting and review. Every call uses JSON-schema structured output, with a reasoning effort set per stage.
+- **Safeguards for real use.** Stage checkpoints, a cost ledger with a budget, slide text fenced off as data against prompt injection, and a preview the student accepts or rejects.
+
+In a recorded run on Meta's models, all 22 stages completed on three original lectures: 19 calls, $1.57, and 46 of 46 source quotes found on their cited pages (see [Recorded runs](#recorded-runs-on-metas-models)).
 
 Meta Global AI Developer Hackathon · Indie Developer track · Build for Your World · Demo video: [`demo/lecnote-demo.mp4`](demo/lecnote-demo.mp4)
 
@@ -17,7 +28,7 @@ Building period: Oct 26 – Nov 4, 2026 (US Eastern).
 <sub>The command-line runner in this repo runs step 1 and the planning and repair of step 2; all three steps run in the desktop app (recorded run 1 below). Muse Spark 1.3 also runs the lighter checks and the English version, not drawn here. Source: [`docs/pipeline.svg`](docs/pipeline.svg).</sub>
 
 - **Built during the hackathon, in this repo:** the generation core (22 stages: prompts, JSON schemas, code checks, automatic repairs), the Meta Model API transport and model routing, the command-line runner, the sample course and the recorded runs.
-- **Pre-existing, not in this repo:** LecNote, my macOS app for reading lecture PDFs and taking notes (first commit Oct 16, 2026), including the reader and the base of Ask AI. The app's screens that run this pipeline, and the other improvements I made to the app during the event, are in my private repository, because they are interwoven with the pre-existing app; they are shown in the demo video.
+- **Pre-existing, not in this repo:** LecNote, my macOS app for reading lecture PDFs and taking notes (first commit Oct 16, 2026), including the reader, word lookup and the Ask AI panel. The app's screens that run this pipeline, and what I added to the app during the event, are in my private repository, because they are interwoven with the pre-existing app; they are shown in the demo video. Those additions include a pre-class guide in which Muse Wonder lists the earlier concepts a new lecture builds on and where the student may get stuck, explanations in the student's own language, pictures in Ask AI questions, shorter answers with points to expand, and a page of open questions.
 - **Running without the app:** the command-line runner calls Meta's models directly, and `npm run demo:mock` replays a recorded run without an API key.
 - No pre-hackathon code or git history is included. Two small pieces the core needs, the `ExamInfo` type (`src/core/course.ts`) and a lecture-title helper (`src/core/library.ts`), were written again for this repo instead of being copied.
 
@@ -57,9 +68,13 @@ That is 22 stages in total: 15 for the map and 7 for the sheet (`src/core/gen/pi
 
 This is a workflow demonstration on small original material, not a full-course benchmark.
 
-**2. The command-line runner in this repo** (`runs/2026-11-04-meta/`), on the 2-lecture, 10-page sample in `samples/`:
+**2. The run in the demo video**, on lectures 1–4 of the Deep Learning course below (170 pages): about 35 minutes and $11.15, from the app's request log. Its files are not in this repo.
+
+**3. The command-line runner in this repo** (`runs/2026-11-04-meta/`), on the 2-lecture, 10-page sample in `samples/`:
 
 4 calls: Muse Spark 1.3 read the two lectures ($0.02), Muse Wonder planned the map and repaired it ($0.20); $0.22 and 80 s in total. Every page reading passed the code checks, and every formula rendered. Wonder's first plan matched its JSON schema but failed 19 structural checks, mostly concepts not attached to any branch. One repair call fixed all of them: 3 threads, 7 strands, 17 concepts with home pages, and a 12-step tour. `npm run demo:mock` replays exactly these answers.
+
+Lecture slides in the demo video: Olivier Grisel & Charles Ollion, *Deep Learning* (IP Paris), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), converted to PDF; source: [m2dsupsdlclass/lectures-labs](https://github.com/m2dsupsdlclass/lectures-labs).
 
 ## Run it
 
@@ -68,7 +83,7 @@ Requires Node 20+.
 ```bash
 npm install
 
-# 1. Without an API key: replays the answers Meta's models gave in recorded run 2,
+# 1. Without an API key: replays the answers Meta's models gave in recorded run 3,
 #    and runs all the code checks on them
 npm run demo:mock
 
@@ -95,9 +110,9 @@ src/core/gen/           the generation core: 22 stages, prompts, schemas, checks
 src/core/structure.ts   the knowledge-map format
 src/core/formulas.ts    the formula-sheet format
 samples/course.json     a small original sample course (2 lectures, 10 pages), written for this repo
-samples/mock-answers.json  the answers of recorded run 2, replayed by the mock mode
+samples/mock-answers.json  the answers of recorded run 3, replayed by the mock mode
 runs/2026-11-04-desktop/   recorded run 1: audit, report, cost ledger, reference checks, the generated map and sheet
-runs/2026-11-04-meta/   recorded run 2: readings, plan, answers, cost ledger
+runs/2026-11-04-meta/   recorded run 3: readings, plan, answers, cost ledger
 demo/lecnote-demo.mp4   the demo video
 ```
 
