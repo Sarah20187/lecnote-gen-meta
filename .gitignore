@@ -4,3 +4,7 @@ out-mock/
 .env
 *.log
 .DS_Store
+
+# videos: keep them out of git history; link the demo video instead
+*.mp4
+*.mov

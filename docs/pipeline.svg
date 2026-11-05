@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1290 580" width="1290" height="580" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+    <marker id="ahG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker>
+    <marker id="ahR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c2410c"/></marker>
+  </defs>
+  <rect width="1290" height="580" fill="#ffffff"/>
+
+  <!-- zone -->
+  <rect x="230" y="34" width="840" height="476" rx="18" fill="#f5f9ff" stroke="#2563eb" stroke-width="3"/>
+  <text x="256" y="66" font-size="13" font-weight="700" fill="#2563eb" letter-spacing="1.2">BUILT DURING THE HACKATHON · THIS REPO</text>
+
+  <!-- column headers -->
+  <g font-size="13" font-weight="600" fill="#64748b">
+    <text x="260" y="108">① Read the slides</text>
+    <text x="535" y="108">② Build and review the map</text>
+    <text x="810" y="108">③ Formula sheet</text>
+  </g>
+
+  <!-- pre-existing: PDFs -->
+  <rect x="20" y="125" width="180" height="70" rx="10" fill="#fff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="110" y="155" font-size="15" font-weight="600" fill="#334155" text-anchor="middle">Lecture PDFs</text>
+  <text x="110" y="175" font-size="12" fill="#94a3b8" text-anchor="middle">pre-existing app</text>
+
+  <!-- model boxes -->
+  <g>
+    <rect x="260" y="125" width="230" height="70" rx="10" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="375" y="152" font-size="15" font-weight="600" fill="#0f172a" text-anchor="middle">Read every page</text>
+    <rect x="315" y="163" width="120" height="22" rx="11" fill="#e6f0fb"/>
+    <text x="375" y="178" font-size="12" font-weight="600" fill="#0b6bcb" text-anchor="middle">Muse Spark 1.3</text>
+
+    <rect x="535" y="125" width="230" height="70" rx="10" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="650" y="152" font-size="15" font-weight="600" fill="#0f172a" text-anchor="middle">Draft, then review 4 ways</text>
+    <rect x="595" y="163" width="110" height="22" rx="11" fill="#efe9fd"/>
+    <text x="650" y="178" font-size="12" font-weight="600" fill="#6d28d9" text-anchor="middle">Muse Wonder</text>
+
+    <rect x="810" y="125" width="230" height="70" rx="10" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="925" y="152" font-size="15" font-weight="600" fill="#0f172a" text-anchor="middle">Formulas for each concept</text>
+    <rect x="870" y="163" width="110" height="22" rx="11" fill="#efe9fd"/>
+    <text x="925" y="178" font-size="12" font-weight="600" fill="#6d28d9" text-anchor="middle">Muse Wonder</text>
+  </g>
+
+  <!-- code gates -->
+  <g>
+    <rect x="260" y="265" width="230" height="70" rx="10" fill="#ecfdf3" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="375" y="292" font-size="15" font-weight="600" fill="#14532d" text-anchor="middle">Code checks</text>
+    <text x="375" y="316" font-size="12" fill="#15803d" text-anchor="middle">titles on the page · formulas render</text>
+
+    <rect x="535" y="265" width="230" height="70" rx="10" fill="#ecfdf3" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="650" y="292" font-size="15" font-weight="600" fill="#14532d" text-anchor="middle">Code checks</text>
+    <text x="650" y="316" font-size="12" fill="#15803d" text-anchor="middle">every quote and finding is on its page</text>
+
+    <rect x="810" y="265" width="230" height="70" rx="10" fill="#ecfdf3" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="925" y="292" font-size="15" font-weight="600" fill="#14532d" text-anchor="middle">Code checks</text>
+    <text x="925" y="316" font-size="12" fill="#15803d" text-anchor="middle">renders · has a source page</text>
+  </g>
+
+  <!-- output -->
+  <rect x="260" y="405" width="780" height="70" rx="10" fill="#2563eb"/>
+  <text x="650" y="434" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">Knowledge structure + formula sheet</text>
+  <text x="650" y="457" font-size="13" fill="#dbeafe" text-anchor="middle">every concept, quote and formula points to a slide page</text>
+
+  <!-- pre-existing: reader -->
+  <rect x="1118" y="405" width="160" height="70" rx="10" fill="#fff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="1198" y="436" font-size="14" font-weight="600" fill="#334155" text-anchor="middle">LecNote reader</text>
+  <text x="1198" y="456" font-size="12" fill="#94a3b8" text-anchor="middle">pre-existing app</text>
+
+  <!-- arrows -->
+  <g fill="none" stroke="#475569" stroke-width="1.6">
+    <path d="M200,160 L256,160" marker-end="url(#ah)"/>
+    <path d="M345,195 L345,261" marker-end="url(#ah)"/>
+    <path d="M620,195 L620,261" marker-end="url(#ah)"/>
+    <path d="M895,195 L895,261" marker-end="url(#ah)"/>
+    <path d="M1040,440 L1114,440" marker-end="url(#ah)"/>
+  </g>
+  <g fill="none" stroke="#15803d" stroke-width="1.6">
+    <path d="M490,300 L504,300 Q512,300 512,292 L512,168 Q512,160 520,160 L531,160" marker-end="url(#ahG)"/>
+    <path d="M765,300 L779,300 Q787,300 787,292 L787,168 Q787,160 795,160 L806,160" marker-end="url(#ahG)"/>
+    <path d="M650,335 L650,401" marker-end="url(#ahG)"/>
+    <path d="M925,335 L925,401" marker-end="url(#ahG)"/>
+  </g>
+  <g fill="none" stroke="#c2410c" stroke-width="1.6">
+    <path d="M405,265 L405,199" marker-end="url(#ahR)"/>
+    <path d="M680,265 L680,199" marker-end="url(#ahR)"/>
+    <path d="M955,265 L955,199" marker-end="url(#ahR)"/>
+  </g>
+  <g font-size="12" fill="#c2410c">
+    <text x="413" y="236">re-read</text>
+    <text x="688" y="236">repair</text>
+    <text x="963" y="236">repair</text>
+  </g>
+  <text x="1094" y="430" font-size="12" fill="#475569" text-anchor="middle">adopt</text>
+
+  <!-- legend -->
+  <g font-size="12" fill="#475569">
+    <rect x="260" y="534" width="26" height="16" rx="4" fill="#f5f9ff" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="294" y="547">built during the hackathon</text>
+    <rect x="470" y="534" width="26" height="16" rx="4" fill="#fff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="504" y="547">pre-existing app, not in this repo</text>
+    <rect x="722" y="534" width="26" height="16" rx="4" fill="#ecfdf3" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="756" y="547">code, not a model</text>
+    <rect x="886" y="533" width="26" height="18" rx="9" fill="#e6f0fb"/>
+    <rect x="916" y="533" width="26" height="18" rx="9" fill="#efe9fd"/>
+    <text x="950" y="547">Meta model call</text>
+  </g>
+</svg>

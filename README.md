@@ -12,8 +12,12 @@ Meta Global AI Developer Hackathon · Indie Developer track · Build for Your Wo
 
 Building period: Oct 26 – Nov 4, 2026 (US Eastern).
 
+![The generation pipeline: Muse Spark 1.3 reads the slides, Muse Wonder builds, reviews and repairs the map and the formula sheet, and code checks every step](docs/pipeline.png)
+
+<sub>The command-line runner in this repo runs step 1 and the planning and repair of step 2; all three steps run in the desktop app (recorded run 1 below). Muse Spark 1.3 also runs the lighter checks and the English version, not drawn here. Source: [`docs/pipeline.svg`](docs/pipeline.svg).</sub>
+
 - **Built during the hackathon, in this repo:** the generation core (22 stages: prompts, JSON schemas, code checks, automatic repairs), the Meta Model API transport and model routing, the command-line runner, the sample course and the recorded runs.
-- **Pre-existing, not in this repo:** LecNote, my macOS app for reading lecture PDFs and taking notes (first commit Oct 16, 2026). The app's screens that run this pipeline are in my private repository, because they are interwoven with the pre-existing app; they are shown in the demo video.
+- **Pre-existing, not in this repo:** LecNote, my macOS app for reading lecture PDFs and taking notes (first commit Oct 16, 2026), including the reader and the base of Ask AI. The app's screens that run this pipeline, and the other improvements I made to the app during the event, are in my private repository, because they are interwoven with the pre-existing app; they are shown in the demo video.
 - **Running without the app:** the command-line runner calls Meta's models directly, and `npm run demo:mock` replays a recorded run without an API key.
 - No pre-hackathon code or git history is included. Two small pieces the core needs, the `ExamInfo` type (`src/core/course.ts`) and a lecture-title helper (`src/core/library.ts`), were written again for this repo instead of being copied.
 
