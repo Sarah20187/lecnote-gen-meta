@@ -1,0 +1,59 @@
+{
+  "runId": "20261104T190238Z-65fa",
+  "state": "done",
+  "capUsd": 10,
+  "courseName": "Optimization Essentials",
+  "lectures": 3,
+  "pages": 12,
+  "elapsedSeconds": 535.052,
+  "settledRequests": 19,
+  "settledCostUsd": 1.5743369999999997,
+  "models": [
+    "muse-spark-1.3",
+    "muse-wonder-1.0"
+  ],
+  "completedStages": [
+    "inventory",
+    "read",
+    "reread",
+    "anchors",
+    "blueprint",
+    "draft",
+    "check",
+    "coverage",
+    "lenses",
+    "factcheck",
+    "tour",
+    "verify",
+    "apply",
+    "recheck",
+    "english",
+    "formulaPages",
+    "formulaDraft",
+    "formulaCheck",
+    "formulaReview",
+    "formulaVerify",
+    "formulaApply",
+    "formulaRecheck"
+  ],
+  "source": "Original synthetic teaching decks; this is a workflow demonstration, not a full-course benchmark.",
+  "quotationCheck": "NFKC + case folding + quote/dash normalization + removal of whitespace; same matching rule as the app.",
+  "artifacts": {
+    "structure-A.json": {
+      "referenceCount": 33,
+      "matchedReferences": 33,
+      "failedReferences": [],
+      "concepts": 12,
+      "conceptsWithoutReferences": [],
+      "englishPresent": true
+    },
+    "formulas.json": {
+      "referenceCount": 13,
+      "matchedReferences": 13,
+      "failedReferences": [],
+      "formulas": 13,
+      "formulasWithoutReferences": []
+    }
+  },
+  "allReferenceChecksPassed": true
+}

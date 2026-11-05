@@ -90,11 +90,19 @@ export class MetaTransport implements Transport {
     const started = Date.now();
     let last = "";
     for (let attempt = 1; attempt <= 3; attempt++) {
-      const res = await fetch(`${this.baseUrl}/chat/completions`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${this.apiKey}` },
-        body: JSON.stringify(body),
-      });
+      let res: Response;
+      try {
+        res = await fetch(`${this.baseUrl}/chat/completions`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Authorization: `Bearer ${this.apiKey}` },
+          body: JSON.stringify(body),
+        });
+      } catch (e) {
+        // A dropped connection or DNS failure: retry like a 5xx.
+        last = `network error: ${e instanceof Error ? e.message : String(e)}`;
+        await new Promise((r) => setTimeout(r, 2000 * attempt));
+        continue;
+      }
       if (res.ok) {
         const json = (await res.json()) as {
           model?: string;

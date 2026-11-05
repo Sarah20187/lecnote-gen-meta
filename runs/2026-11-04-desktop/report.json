@@ -1,0 +1,1304 @@
+{
+ "schema": "lecnote-gen-report/1",
+ "runId": "20261104T190238Z-65fa",
+ "course": "Optimization Essentials",
+ "createdAt": "2026-11-04T19:02:38.583Z",
+ "finishedAt": "2026-11-04T19:11:33.600Z",
+ "out": {
+  "structure": "out/structure-A.json",
+  "formulas": "out/formulas.json"
+ },
+ "stages": [
+  {
+   "id": "inventory",
+   "calls": 0,
+   "sent": 0,
+   "reused": 0,
+   "attempts": 0,
+   "costUsd": 0,
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 52
+  },
+  {
+   "id": "read",
+   "calls": 3,
+   "sent": 3,
+   "reused": 0,
+   "attempts": 3,
+   "costUsd": 0.019611,
+   "tokens": {
+    "inputTokens": 3316,
+    "outputTokens": 3577,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 1762
+   },
+   "ms": 21263
+  },
+  {
+   "id": "reread",
+   "calls": 0,
+   "sent": 0,
+   "reused": 0,
+   "attempts": 0,
+   "costUsd": 0,
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 59
+  },
+  {
+   "id": "anchors",
+   "calls": 0,
+   "sent": 0,
+   "reused": 0,
+   "attempts": 0,
+   "costUsd": 0,
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 2
+  },
+  {
+   "id": "blueprint",
+   "calls": 2,
+   "sent": 2,
+   "reused": 0,
+   "attempts": 2,
+   "costUsd": 0.126476,
+   "tokens": {
+    "inputTokens": 10684,
+    "outputTokens": 4187,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 21643
+  },
+  {
+   "id": "draft",
+   "calls": 1,
+   "sent": 1,
+   "reused": 0,
+   "attempts": 1,
+   "costUsd": 0.159699,
+   "tokens": {
+    "inputTokens": 1035,
+    "outputTokens": 7732,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 4596
+   },
+   "ms": 37726
+  },
+  {
+   "id": "check",
+   "calls": 0,
+   "sent": 0,
+   "reused": 0,
+   "attempts": 0,
+   "costUsd": 0,
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 9
+  },
+  {
+   "id": "coverage",
+   "calls": 0,
+   "sent": 0,
+   "reused": 0,
+   "attempts": 0,
+   "costUsd": 0,
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 1
+  },
+  {
+   "id": "lenses",
+   "calls": 3,
+   "sent": 3,
+   "reused": 0,
+   "attempts": 3,
+   "costUsd": 0.493801,
+   "tokens": {
+    "inputTokens": 16309,
+    "outputTokens": 21349,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 7924
+   },
+   "ms": 131201
+  },
+  {
+   "id": "factcheck",
+   "calls": 3,
+   "sent": 3,
+   "reused": 0,
+   "attempts": 3,
+   "costUsd": 0.20960499999999999,
+   "tokens": {
+    "inputTokens": 16370,
+    "outputTokens": 7127,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 7924
+   },
+   "ms": 34892
+  },
+  {
+   "id": "tour",
+   "calls": 1,
+   "sent": 1,
+   "reused": 0,
+   "attempts": 1,
+   "costUsd": 0.052101,
+   "tokens": {
+    "inputTokens": 114,
+    "outputTokens": 2503,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 7924
+   },
+   "ms": 18681
+  },
+  {
+   "id": "verify",
+   "calls": 0,
+   "sent": 0,
+   "reused": 0,
+   "attempts": 0,
+   "costUsd": 0,
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 15
+  },
+  {
+   "id": "apply",
+   "calls": 0,
+   "sent": 0,
+   "reused": 0,
+   "attempts": 0,
+   "costUsd": 0,
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 3
+  },
+  {
+   "id": "recheck",
+   "calls": 0,
+   "sent": 0,
+   "reused": 0,
+   "attempts": 0,
+   "costUsd": 0,
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 4
+  },
+  {
+   "id": "english",
+   "calls": 3,
+   "sent": 3,
+   "reused": 0,
+   "attempts": 3,
+   "costUsd": 0.119416,
+   "tokens": {
+    "inputTokens": 20848,
+    "outputTokens": 21822,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 4081
+   },
+   "ms": 165597
+  },
+  {
+   "id": "formulaPages",
+   "calls": 0,
+   "sent": 0,
+   "reused": 0,
+   "attempts": 0,
+   "costUsd": 0,
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 9
+  },
+  {
+   "id": "formulaDraft",
+   "calls": 1,
+   "sent": 1,
+   "reused": 0,
+   "attempts": 1,
+   "costUsd": 0.165004,
+   "tokens": {
+    "inputTokens": 4991,
+    "outputTokens": 7252,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 32331
+  },
+  {
+   "id": "formulaCheck",
+   "calls": 0,
+   "sent": 0,
+   "reused": 0,
+   "attempts": 0,
+   "costUsd": 0,
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 13
+  },
+  {
+   "id": "formulaReview",
+   "calls": 2,
+   "sent": 2,
+   "reused": 0,
+   "attempts": 2,
+   "costUsd": 0.228624,
+   "tokens": {
+    "inputTokens": 13731,
+    "outputTokens": 8685,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 70903
+  },
+  {
+   "id": "formulaVerify",
+   "calls": 0,
+   "sent": 0,
+   "reused": 0,
+   "attempts": 0,
+   "costUsd": 0,
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 8
+  },
+  {
+   "id": "formulaApply",
+   "calls": 0,
+   "sent": 0,
+   "reused": 0,
+   "attempts": 0,
+   "costUsd": 0,
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 1
+  },
+  {
+   "id": "formulaRecheck",
+   "calls": 0,
+   "sent": 0,
+   "reused": 0,
+   "attempts": 0,
+   "costUsd": 0,
+   "tokens": {
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 0
+   },
+   "ms": 18
+  }
+ ],
+ "usage": {
+  "inputTokens": 87398,
+  "outputTokens": 84234,
+  "cacheCreationTokens": 0,
+  "cacheReadTokens": 34211,
+  "calls": 19,
+  "sent": 19,
+  "reused": 0
+ },
+ "cost": {
+  "usd": 1.5743369999999997,
+  "estimated": false,
+  "attempts": 19,
+  "capUsd": 10
+ },
+ "estimate": {
+  "low": 0.74,
+  "high": 29.3,
+  "requests": [
+   20,
+   108
+  ],
+  "minutes": [
+   4,
+   328
+  ],
+  "stages": [
+   {
+    "id": "inventory",
+    "calls": [
+     0,
+     0
+    ],
+    "usd": [
+     0,
+     0
+    ],
+    "minutes": [
+     0,
+     0
+    ]
+   },
+   {
+    "id": "read",
+    "calls": [
+     3,
+     4
+    ],
+    "usd": [
+     0.008729062499999999,
+     0.056394562499999995
+    ],
+    "minutes": [
+     0.07,
+     1.6291666666666667
+    ]
+   },
+   {
+    "id": "reread",
+    "calls": [
+     0,
+     4
+    ],
+    "usd": [
+     0,
+     0.1167753125
+    ],
+    "minutes": [
+     0,
+     4.3125
+    ]
+   },
+   {
+    "id": "anchors",
+    "calls": [
+     0,
+     0
+    ],
+    "usd": [
+     0,
+     0
+    ],
+    "minutes": [
+     0,
+     0
+    ]
+   },
+   {
+    "id": "blueprint",
+    "calls": [
+     1,
+     3
+    ],
+    "usd": [
+     0.065218,
+     1.628488933333333
+    ],
+    "minutes": [
+     0.5125,
+     26.78733333333333
+    ]
+   },
+   {
+    "id": "draft",
+    "calls": [
+     1,
+     3
+    ],
+    "usd": [
+     0.106833,
+     2.2119406666666666
+    ],
+    "minutes": [
+     0.9291666666666667,
+     36.263333333333335
+    ]
+   },
+   {
+    "id": "check",
+    "calls": [
+     0,
+     4
+    ],
+    "usd": [
+     0,
+     0.1980844333333333
+    ],
+    "minutes": [
+     0,
+     10.35
+    ]
+   },
+   {
+    "id": "coverage",
+    "calls": [
+     0,
+     0
+    ],
+    "usd": [
+     0,
+     0
+    ],
+    "minutes": [
+     0,
+     0
+    ]
+   },
+   {
+    "id": "lenses",
+    "calls": [
+     3,
+     4
+    ],
+    "usd": [
+     0.1610302,
+     2.5944868633333336
+    ],
+    "minutes": [
+     0.675,
+     20.6425
+    ]
+   },
+   {
+    "id": "factcheck",
+    "calls": [
+     3,
+     7
+    ],
+    "usd": [
+     0.0840423,
+     2.0572829166666664
+    ],
+    "minutes": [
+     0.3625,
+     16.215
+    ]
+   },
+   {
+    "id": "tour",
+    "calls": [
+     1,
+     2
+    ],
+    "usd": [
+     0.0276141,
+     0.3835679333333333
+    ],
+    "minutes": [
+     0.24166666666666667,
+     5.52
+    ]
+   },
+   {
+    "id": "verify",
+    "calls": [
+     1,
+     30
+    ],
+    "usd": [
+     0.045562,
+     8.754575674999998
+    ],
+    "minutes": [
+     0.27291666666666664,
+     69.76666666666665
+    ]
+   },
+   {
+    "id": "apply",
+    "calls": [
+     2,
+     3
+    ],
+    "usd": [
+     0.096897,
+     0.9104611333333332
+    ],
+    "minutes": [
+     0.5666666666666667,
+     12.266666666666666
+    ]
+   },
+   {
+    "id": "recheck",
+    "calls": [
+     0,
+     4
+    ],
+    "usd": [
+     0,
+     0.1980844333333333
+    ],
+    "minutes": [
+     0,
+     10.35
+    ]
+   },
+   {
+    "id": "english",
+    "calls": [
+     2,
+     5
+    ],
+    "usd": [
+     0.013821825,
+     0.275833365
+    ],
+    "minutes": [
+     0.24583333333333332,
+     14.413333333333332
+    ]
+   },
+   {
+    "id": "formulaPages",
+    "calls": [
+     0,
+     0
+    ],
+    "usd": [
+     0,
+     0
+    ],
+    "minutes": [
+     0,
+     0
+    ]
+   },
+   {
+    "id": "formulaDraft",
+    "calls": [
+     1,
+     4
+    ],
+    "usd": [
+     0.071282,
+     2.6182348999999996
+    ],
+    "minutes": [
+     0.6,
+     22.022499999999997
+    ]
+   },
+   {
+    "id": "formulaCheck",
+    "calls": [
+     0,
+     4
+    ],
+    "usd": [
+     0,
+     0.21906778375
+    ],
+    "minutes": [
+     0,
+     10.35
+    ]
+   },
+   {
+    "id": "formulaReview",
+    "calls": [
+     2,
+     3
+    ],
+    "usd": [
+     0.064246,
+     0.8674428149999999
+    ],
+    "minutes": [
+     0.24166666666666667,
+     6.324999999999999
+    ]
+   },
+   {
+    "id": "formulaVerify",
+    "calls": [
+     0,
+     17
+    ],
+    "usd": [
+     0,
+     5.06158746
+    ],
+    "minutes": [
+     0,
+     37.56666666666666
+    ]
+   },
+   {
+    "id": "formulaApply",
+    "calls": [
+     0,
+     3
+    ],
+    "usd": [
+     0,
+     0.9197791999999999
+    ],
+    "minutes": [
+     0,
+     12.266666666666666
+    ]
+   },
+   {
+    "id": "formulaRecheck",
+    "calls": [
+     0,
+     4
+    ],
+    "usd": [
+     0,
+     0.21906778375
+    ],
+    "minutes": [
+     0,
+     10.35
+    ]
+   }
+  ],
+  "pricesAsOf": "2026-11-03"
+ },
+ "map": {
+  "blueprint": {
+   "plan": {
+    "concepts": [
+     {
+      "homeLecture": 1,
+      "homePage": 1,
+      "id": "feature-vector",
+      "parent": "A1",
+      "term": "feature vector"
+     },
+     {
+      "homeLecture": 1,
+      "homePage": 2,
+      "id": "dot-product",
+      "parent": "A1",
+      "term": "dot product"
+     },
+     {
+      "homeLecture": 1,
+      "homePage": 3,
+      "id": "linear-prediction",
+      "parent": "A2",
+      "term": "linear model; linear prediction"
+     },
+     {
+      "homeLecture": 1,
+      "homePage": 4,
+      "id": "residual",
+      "parent": "A2",
+      "term": "residual"
+     },
+     {
+      "homeLecture": 2,
+      "homePage": 1,
+      "id": "squared-error",
+      "parent": "B1",
+      "term": "squared error"
+     },
+     {
+      "homeLecture": 2,
+      "homePage": 2,
+      "id": "mean-squared-error",
+      "parent": "B1",
+      "term": "mean squared error"
+     },
+     {
+      "homeLecture": 2,
+      "homePage": 3,
+      "id": "weight-gradient",
+      "parent": "B2",
+      "term": "weight gradient"
+     },
+     {
+      "homeLecture": 2,
+      "homePage": 4,
+      "id": "intercept-gradient",
+      "parent": "B2",
+      "term": "intercept gradient"
+     },
+     {
+      "homeLecture": 3,
+      "homePage": 1,
+      "id": "gradient-descent",
+      "parent": "C1",
+      "term": "gradient descent"
+     },
+     {
+      "homeLecture": 3,
+      "homePage": 2,
+      "id": "learning-rate",
+      "parent": "C1",
+      "term": "learning rate"
+     },
+     {
+      "homeLecture": 3,
+      "homePage": 3,
+      "id": "validation-error",
+      "parent": "C2",
+      "term": "validation error"
+     },
+     {
+      "homeLecture": 3,
+      "homePage": 4,
+      "id": "early-stopping",
+      "parent": "C2",
+      "term": "early stopping"
+     }
+    ],
+    "strands": [
+     {
+      "anchorRef": {
+       "lecture": 1,
+       "page": 1
+      },
+      "id": "A1",
+      "origin": "ai",
+      "parent": "A",
+      "question": "如何把一条观测表示成向量并组合各特征？",
+      "title": "表示与组合"
+     },
+     {
+      "anchorRef": {
+       "lecture": 1,
+       "page": 3
+      },
+      "id": "A2",
+      "origin": "ai",
+      "parent": "A",
+      "question": "如何由特征得到预测并判断偏差方向？",
+      "title": "预测与残差"
+     },
+     {
+      "anchorRef": {
+       "lecture": 2,
+       "page": 1
+      },
+      "id": "B1",
+      "origin": "ai",
+      "parent": "B",
+      "question": "如何把单个残差汇总为整个数据集的目标？",
+      "title": "从残差到目标"
+     },
+     {
+      "anchorRef": {
+       "lecture": 2,
+       "page": 3
+      },
+      "id": "B2",
+      "origin": "ai",
+      "parent": "B",
+      "question": "目标随权重和截距分别如何变化？",
+      "title": "两类梯度"
+     },
+     {
+      "anchorRef": {
+       "lecture": 3,
+       "page": 1
+      },
+      "id": "C1",
+      "origin": "ai",
+      "parent": "C",
+      "question": "如何沿梯度更新参数并控制步长？",
+      "title": "更新与步长"
+     },
+     {
+      "anchorRef": {
+       "lecture": 3,
+       "page": 3
+      },
+      "id": "C2",
+      "origin": "ai",
+      "parent": "C",
+      "question": "如何用未参与训练的数据比较选择并决定停止点？",
+      "title": "验证与停止"
+     }
+    ],
+    "threads": [
+     {
+      "anchorRef": {
+       "lecture": 1,
+       "page": 1
+      },
+      "id": "A",
+      "origin": "ai",
+      "question": "如何用向量表示观测并做出线性预测？",
+      "title": "向量与线性预测"
+     },
+     {
+      "anchorRef": {
+       "lecture": 2,
+       "page": 1
+      },
+      "id": "B",
+      "origin": "ai",
+      "question": "如何度量预测误差并求出参数梯度？",
+      "title": "误差与梯度"
+     },
+     {
+      "anchorRef": {
+       "lecture": 3,
+       "page": 1
+      },
+      "id": "C",
+      "origin": "ai",
+      "question": "如何学习参数并检查模型选择？",
+      "title": "学习与检查"
+     }
+    ],
+    "tour": [
+     {
+      "node": "",
+      "title": "课程全貌"
+     },
+     {
+      "node": "A",
+      "title": "向量与预测"
+     },
+     {
+      "node": "B",
+      "title": "误差与梯度"
+     },
+     {
+      "node": "C",
+      "title": "学习与检查"
+     },
+     {
+      "node": "gradient-descent",
+      "title": "从梯度到更新"
+     },
+     {
+      "node": "residual",
+      "title": "跨线主链"
+     },
+     {
+      "node": "weight-gradient",
+      "title": "易混概念"
+     },
+     {
+      "node": "validation-error",
+      "title": "验证与选择"
+     },
+     {
+      "node": "",
+      "title": "使用地图回忆"
+     }
+    ]
+   },
+   "firstIssues": [
+    "sizes: count-tour (7 tour steps, need 8–14)"
+   ],
+   "issues": []
+  },
+  "departures": [],
+  "check": {
+   "changes": [
+    "lectures: added L1",
+    "lectures: added L2",
+    "lectures: added L3"
+   ],
+   "issues": [],
+   "rounds": 0,
+   "rejected": []
+  },
+  "verify": {
+   "real": [],
+   "dropped": [],
+   "notReal": [],
+   "imageChanges": []
+  },
+  "apply": {
+   "kept": [],
+   "reverted": [],
+   "rejected": [],
+   "declined": []
+  },
+  "recheck": {
+   "changes": [],
+   "issues": [],
+   "rounds": 0,
+   "rejected": [],
+   "coverage": null
+  },
+  "english": {
+   "issues": [],
+   "unknown": [
+    "link intercept-gradient→gradient-descent"
+   ],
+   "missing": [
+    "link weight-gradient→gradient-descent"
+   ],
+   "rounds": 1,
+   "restored": [],
+   "held": []
+  }
+ },
+ "sheet": {
+  "pages": {
+   "ranges": [
+    [
+     1,
+     2,
+     3
+    ]
+   ],
+   "skipped": false
+  },
+  "check": {
+   "changes": [
+    "lectures: added L1",
+    "lectures: added L2",
+    "lectures: added L3"
+   ],
+   "issues": [],
+   "rounds": 0,
+   "rejected": []
+  },
+  "verify": {
+   "changes": [],
+   "real": [],
+   "dropped": [],
+   "notReal": []
+  },
+  "apply": {
+   "changes": [],
+   "kept": [],
+   "reverted": [],
+   "rejected": [],
+   "declined": []
+  },
+  "recheck": {
+   "changes": [],
+   "issues": [],
+   "rounds": 0,
+   "rejected": []
+  }
+ },
+ "coverage": null,
+ "readings": {
+  "digests": {
+   "d8fcfc82e27642248c41eb9ead7f320e9fa367f6ef23ecdc55e8a9636436edde": [
+    {
+     "edges": [],
+     "figureKind": "none",
+     "figureText": "",
+     "formulas": [
+      {
+       "tex": "x = (x_1, x_2, ..., x_d)",
+       "what": "feature vector"
+      },
+      {
+       "tex": "x = (60, 2)",
+       "what": "feature vector example"
+      }
+     ],
+     "kind": "content",
+     "page": 1,
+     "roadmapItems": [],
+     "teacherQuestion": "",
+     "terms": [
+      "feature vector",
+      "observation",
+      "feature"
+     ],
+     "title": "Feature vector"
+    },
+    {
+     "edges": [],
+     "figureKind": "none",
+     "figureText": "",
+     "formulas": [
+      {
+       "tex": "w \\cdot x = \\sum_j w_j x_j",
+       "what": "dot product"
+      },
+      {
+       "tex": "(2, 3) \\cdot (4, 1) = 11",
+       "what": "dot product example"
+      }
+     ],
+     "kind": "content",
+     "page": 2,
+     "roadmapItems": [],
+     "teacherQuestion": "",
+     "terms": [
+      "dot product",
+      "weight"
+     ],
+     "title": "Dot product"
+    },
+    {
+     "edges": [],
+     "figureKind": "none",
+     "figureText": "",
+     "formulas": [
+      {
+       "tex": "\\hat{y} = w \\cdot x + b",
+       "what": "linear model prediction"
+      }
+     ],
+     "kind": "content",
+     "page": 3,
+     "roadmapItems": [],
+     "teacherQuestion": "",
+     "terms": [
+      "linear model",
+      "prediction",
+      "observed target",
+      "weight vector",
+      "intercept"
+     ],
+     "title": "Linear prediction"
+    },
+    {
+     "edges": [],
+     "figureKind": "none",
+     "figureText": "",
+     "formulas": [
+      {
+       "tex": "r_i = \\hat{y}_i - y_i",
+       "what": "residual"
+      }
+     ],
+     "kind": "content",
+     "page": 4,
+     "roadmapItems": [],
+     "teacherQuestion": "",
+     "terms": [
+      "residual",
+      "prediction",
+      "observed target"
+     ],
+     "title": "Residual"
+    }
+   ],
+   "a99f9b64208c7162857a8392263de862880e60d4f31d81f35aeabfc167f8ab1d": [
+    {
+     "edges": [],
+     "figureKind": "none",
+     "figureText": "",
+     "formulas": [
+      {
+       "tex": "\\ell_i = r_i^2",
+       "what": "squared error"
+      }
+     ],
+     "kind": "content",
+     "page": 1,
+     "roadmapItems": [],
+     "teacherQuestion": "",
+     "terms": [
+      "squared error",
+      "loss",
+      "residual"
+     ],
+     "title": "Squared error"
+    },
+    {
+     "edges": [],
+     "figureKind": "none",
+     "figureText": "",
+     "formulas": [
+      {
+       "tex": "J(w,b) = \\frac{1}{n} \\sum_i (\\hat{y}_i - y_i)^2",
+       "what": "mean squared error objective"
+      }
+     ],
+     "kind": "content",
+     "page": 2,
+     "roadmapItems": [],
+     "teacherQuestion": "",
+     "terms": [
+      "mean squared error",
+      "objective",
+      "loss",
+      "training error",
+      "generalization"
+     ],
+     "title": "Mean squared error"
+    },
+    {
+     "edges": [],
+     "figureKind": "none",
+     "figureText": "",
+     "formulas": [
+      {
+       "tex": "\\text{grad}_w J = \\frac{2}{n} \\sum_i r_i x_i",
+       "what": "weight gradient"
+      }
+     ],
+     "kind": "content",
+     "page": 3,
+     "roadmapItems": [],
+     "teacherQuestion": "",
+     "terms": [
+      "weight gradient",
+      "mean squared error",
+      "linear predictions"
+     ],
+     "title": "Weight gradient"
+    },
+    {
+     "edges": [],
+     "figureKind": "none",
+     "figureText": "",
+     "formulas": [
+      {
+       "tex": "\\frac{dJ}{db} = \\frac{2}{n} \\sum_i r_i",
+       "what": "intercept gradient"
+      }
+     ],
+     "kind": "content",
+     "page": 4,
+     "roadmapItems": [],
+     "teacherQuestion": "",
+     "terms": [
+      "intercept gradient",
+      "mean residual",
+      "weight gradient",
+      "intercept"
+     ],
+     "title": "Intercept gradient"
+    }
+   ],
+   "aa4518e025d9444a706951a3364d6ac2b591cd3924aa43b2e8f1696763eab957": [
+    {
+     "edges": [],
+     "figureKind": "none",
+     "figureText": "",
+     "formulas": [
+      {
+       "tex": "w_{next} = w - \\alpha \\operatorname{grad}_w J",
+       "what": "gradient descent update for parameters"
+      },
+      {
+       "tex": "b_{next} = b - \\alpha \\frac{dJ}{db}",
+       "what": "gradient descent update for intercept"
+      }
+     ],
+     "kind": "content",
+     "page": 1,
+     "roadmapItems": [],
+     "teacherQuestion": "",
+     "terms": [
+      "gradient descent",
+      "gradient",
+      "learning rate",
+      "intercept"
+     ],
+     "title": "Gradient descent"
+    },
+    {
+     "edges": [],
+     "figureKind": "none",
+     "figureText": "",
+     "formulas": [
+      {
+       "tex": "\\text{step\\_size} = \\alpha \\lVert \\operatorname{grad}_w J \\rVert",
+       "what": "size of a parameter update"
+      }
+     ],
+     "kind": "content",
+     "page": 2,
+     "roadmapItems": [],
+     "teacherQuestion": "",
+     "terms": [
+      "learning rate",
+      "hyperparameter",
+      "gradient"
+     ],
+     "title": "Learning rate"
+    },
+    {
+     "edges": [],
+     "figureKind": "none",
+     "figureText": "",
+     "formulas": [
+      {
+       "tex": "J_{val} = \\frac{1}{m} \\sum_k (\\hat{y}_k - y_k)^2",
+       "what": "validation error"
+      }
+     ],
+     "kind": "content",
+     "page": 3,
+     "roadmapItems": [],
+     "teacherQuestion": "",
+     "terms": [
+      "validation error"
+     ],
+     "title": "Validation error"
+    },
+    {
+     "edges": [],
+     "figureKind": "none",
+     "figureText": "",
+     "formulas": [
+      {
+       "tex": "t_{best} = \\operatorname*{argmin}_t J_{val}(t)",
+       "what": "best iteration by validation error"
+      }
+     ],
+     "kind": "content",
+     "page": 4,
+     "roadmapItems": [],
+     "teacherQuestion": "",
+     "terms": [
+      "early stopping",
+      "validation error",
+      "training error"
+     ],
+     "title": "Early stopping"
+    }
+   ]
+  },
+  "reread": [],
+  "remaining": []
+ },
+ "kind": "build",
+ "update": null,
+ "relink": null,
+ "warnings": []
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "location": "root.formulas[0].refs[0]",
+    "lecture": 1,
+    "page": 1,
+    "quote": "A feature vector represents one observation",
+    "matched": true
+  },
+  {
+    "location": "root.formulas[1].refs[0]",
+    "lecture": 1,
+    "page": 2,
+    "quote": "The dot product combines corresponding coordinates",
+    "matched": true
+  },
+  {
+    "location": "root.formulas[2].refs[0]",
+    "lecture": 1,
+    "page": 3,
+    "quote": "A linear model predicts a target",
+    "matched": true
+  },
+  {
+    "location": "root.formulas[3].refs[0]",
+    "lecture": 1,
+    "page": 4,
+    "quote": "A residual is the prediction minus",
+    "matched": true
+  },
+  {
+    "location": "root.formulas[4].refs[0]",
+    "lecture": 2,
+    "page": 1,
+    "quote": "Squared error penalizes a residual regardless",
+    "matched": true
+  },
+  {
+    "location": "root.formulas[5].refs[0]",
+    "lecture": 2,
+    "page": 2,
+    "quote": "Mean squared error averages squared residuals",
+    "matched": true
+  },
+  {
+    "location": "root.formulas[6].refs[0]",
+    "lecture": 2,
+    "page": 3,
+    "quote": "The weight gradient gives the local",
+    "matched": true
+  },
+  {
+    "location": "root.formulas[7].refs[0]",
+    "lecture": 2,
+    "page": 4,
+    "quote": "The intercept gradient is twice the",
+    "matched": true
+  },
+  {
+    "location": "root.formulas[8].refs[0]",
+    "lecture": 3,
+    "page": 1,
+    "quote": "Gradient descent updates parameters in the",
+    "matched": true
+  },
+  {
+    "location": "root.formulas[9].refs[0]",
+    "lecture": 3,
+    "page": 1,
+    "quote": "The intercept uses its own gradient",
+    "matched": true
+  },
+  {
+    "location": "root.formulas[10].refs[0]",
+    "lecture": 3,
+    "page": 2,
+    "quote": "The learning rate controls the size",
+    "matched": true
+  },
+  {
+    "location": "root.formulas[11].refs[0]",
+    "lecture": 3,
+    "page": 3,
+    "quote": "Validation error measures prediction error on",
+    "matched": true
+  },
+  {
+    "location": "root.formulas[12].refs[0]",
+    "lecture": 3,
+    "page": 4,
+    "quote": "Early stopping keeps the parameters with",
+    "matched": true
+  }
+]

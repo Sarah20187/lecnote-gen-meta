@@ -1,0 +1,12 @@
+{
+  "structure-A.json": {
+    "adoptedExists": true,
+    "byteIdenticalToPreview": true,
+    "sha256": "99e83afdbe5c5a299bd02d8629ac2e255223d041f6c90fa47dcb8b2012ed399b"
+  },
+  "formulas.json": {
+    "adoptedExists": true,
+    "byteIdenticalToPreview": true,
+    "sha256": "5bf00d246f0eb11b5ac38070164169bb30336d1c3273a109fde2c64fea192e84"
+  }
+}

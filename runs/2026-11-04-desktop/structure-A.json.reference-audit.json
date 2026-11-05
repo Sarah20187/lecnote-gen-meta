@@ -1,0 +1,233 @@
+[
+  {
+    "location": "root.nodes[9].refs[0]",
+    "lecture": 1,
+    "page": 1,
+    "quote": "A feature vector represents one observation",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[9].refs[1]",
+    "lecture": 1,
+    "page": 3,
+    "quote": "w is the weight vector",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[10].refs[0]",
+    "lecture": 1,
+    "page": 2,
+    "quote": "The dot product combines corresponding coordinates",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[10].refs[1]",
+    "lecture": 1,
+    "page": 3,
+    "quote": "w dot x",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[11].refs[0]",
+    "lecture": 1,
+    "page": 3,
+    "quote": "A linear model predicts a target",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[11].refs[1]",
+    "lecture": 2,
+    "page": 3,
+    "quote": "This formula assumes linear predictions and",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[12].refs[0]",
+    "lecture": 1,
+    "page": 4,
+    "quote": "A residual is the prediction minus",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[12].refs[1]",
+    "lecture": 2,
+    "page": 1,
+    "quote": "Squared error penalizes a residual regardless",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[13].refs[0]",
+    "lecture": 2,
+    "page": 1,
+    "quote": "Squared error penalizes a residual regardless",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[13].refs[1]",
+    "lecture": 2,
+    "page": 2,
+    "quote": "Loss describes one observation; the objective",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[14].refs[0]",
+    "lecture": 2,
+    "page": 2,
+    "quote": "Mean squared error averages squared residuals",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[14].refs[1]",
+    "lecture": 2,
+    "page": 3,
+    "quote": "the mean squared error defined on",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[15].refs[0]",
+    "lecture": 2,
+    "page": 3,
+    "quote": "The weight gradient gives the local",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[15].refs[1]",
+    "lecture": 2,
+    "page": 4,
+    "quote": "Unlike the weight gradient, the intercept",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[15].refs[2]",
+    "lecture": 3,
+    "page": 1,
+    "quote": "w_next = w - alpha grad_w J",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[16].refs[0]",
+    "lecture": 2,
+    "page": 4,
+    "quote": "The intercept gradient is twice the",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[16].refs[1]",
+    "lecture": 3,
+    "page": 1,
+    "quote": "b_next = b - alpha",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[17].refs[0]",
+    "lecture": 3,
+    "page": 1,
+    "quote": "Gradient descent updates parameters in the",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[17].refs[1]",
+    "lecture": 3,
+    "page": 2,
+    "quote": "step_size = alpha ||grad_w J||",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[18].refs[0]",
+    "lecture": 3,
+    "page": 2,
+    "quote": "The learning rate controls the size",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[18].refs[1]",
+    "lecture": 3,
+    "page": 1,
+    "quote": "alpha is a positive learning rate",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[18].refs[2]",
+    "lecture": 3,
+    "page": 3,
+    "quote": "compare choices such as learning rate",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[19].refs[0]",
+    "lecture": 3,
+    "page": 3,
+    "quote": "Validation error measures prediction error on",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[19].refs[1]",
+    "lecture": 3,
+    "page": 4,
+    "quote": "best validation error seen during training",
+    "matched": true
+  },
+  {
+    "location": "root.nodes[20].refs[0]",
+    "lecture": 3,
+    "page": 4,
+    "quote": "Early stopping keeps the parameters with",
+    "matched": true
+  },
+  {
+    "location": "root.links[0].refs[0]",
+    "lecture": 1,
+    "page": 2,
+    "quote": "The dot product combines corresponding coordinates",
+    "matched": true
+  },
+  {
+    "location": "root.links[0].refs[1]",
+    "lecture": 1,
+    "page": 3,
+    "quote": "w dot x",
+    "matched": true
+  },
+  {
+    "location": "root.links[1].refs[0]",
+    "lecture": 1,
+    "page": 4,
+    "quote": "A residual is the prediction minus",
+    "matched": true
+  },
+  {
+    "location": "root.links[1].refs[1]",
+    "lecture": 2,
+    "page": 1,
+    "quote": "Squared error penalizes a residual regardless",
+    "matched": true
+  },
+  {
+    "location": "root.links[2].refs[0]",
+    "lecture": 2,
+    "page": 2,
+    "quote": "Mean squared error averages squared residuals",
+    "matched": true
+  },
+  {
+    "location": "root.links[2].refs[1]",
+    "lecture": 2,
+    "page": 3,
+    "quote": "the mean squared error defined on",
+    "matched": true
+  },
+  {
+    "location": "root.links[3].refs[0]",
+    "lecture": 2,
+    "page": 3,
+    "quote": "The weight gradient gives the local",
+    "matched": true
+  },
+  {
+    "location": "root.links[3].refs[1]",
+    "lecture": 3,
+    "page": 1,
+    "quote": "w_next = w - alpha grad_w J",
+    "matched": true
+  }
+]

@@ -13,7 +13,8 @@
 
 import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { dirname, join, resolve } from "node:path";
+import katex from "katex";
 import { buildBundle, marker, stepInput, type Digests, type Inventory, type PageDigest, type Part } from "../core/gen/bundle";
 import { checkBlueprint, type BlueprintContext } from "../core/gen/blueprint";
 import type { Deck, Issue, PageAt } from "../core/gen/checkStructure";
@@ -50,7 +51,8 @@ const option = (name: string, fallback: string) => {
   const i = args.indexOf(name);
   return i >= 0 && args[i + 1] ? args[i + 1] : fallback;
 };
-const coursePath = args.find((a) => !a.startsWith("--") && !/^\d/.test(a)) ?? "samples/course.json";
+const VALUE_OPTIONS = new Set(["--out", "--budget"]);
+const coursePath = args.find((a, i) => !a.startsWith("--") && !VALUE_OPTIONS.has(args[i - 1] ?? "")) ?? "samples/course.json";
 const outDir = option("--out", "out");
 const budget = Number(option("--budget", "2.00"));
 const mock = flag("--mock");
@@ -75,6 +77,16 @@ async function ask<T>(t: Transport, purpose: string, tier: ModelTier, effort: Ef
   return value;
 }
 
+/** Renders LaTeX as the app does (display mode): null when it renders, else KaTeX's error. */
+const renderTex = (tex: string, display: boolean): string | null => {
+  try {
+    katex.renderToString(tex, { displayMode: display, throwOnError: true, strict: "ignore" });
+    return null;
+  } catch (e) {
+    return e instanceof Error ? e.message : String(e);
+  }
+};
+
 const showIssues = (issues: readonly Issue[]) => {
   for (const i of issues.slice(0, 8)) log(`    ! ${i.where}: ${i.message}`);
   if (issues.length > 8) log(`    … ${issues.length - 8} more`);
@@ -84,7 +96,7 @@ async function main() {
   const course = JSON.parse(await readFile(coursePath, "utf8")) as SampleCourse;
   const transport: Transport = mock
     ? new MockTransport(JSON.parse(await readFile("samples/mock-answers.json", "utf8")) as Record<string, unknown>)
-    : new MetaTransport(process.env.META_API_KEY ?? "");
+    : new MetaTransport(process.env.META_API_KEY ?? "", dirname(resolve(coursePath)));
 
   const inventory: Inventory = {
     lectures: course.lectures.map((l) => ({
@@ -111,7 +123,7 @@ async function main() {
     const parts = buildBundle(inventory, {}, { marker: m, lectures: [l.no], images: true, examFiles: false });
     const read = await ask<{ pages: PageDigest[] }>(transport, `gen.read.L${l.no}`, "small", "low", prompt, parts, digestSchema);
     let digest = read.pages;
-    const issues = readingIssues(l.pages, digest);
+    const issues = readingIssues(l.pages, digest, renderTex);
     log(`    code checks: ${issues.length ? `${issues.length} issue(s)` : "all pages pass"}`);
     showIssues(issues);
     const again = rereadPages(issues);
@@ -120,7 +132,7 @@ async function main() {
       const parts2 = [...buildBundle(inventory, {}, { marker: m, lectures: [l.no], pages: { [l.no]: again }, images: true, examFiles: false }), stepInput(m, "issues", issues.filter((i) => again.includes(i.page)))];
       const reread = await ask<{ pages: PageDigest[] }>(transport, `gen.reread.L${l.no}`, "mid", "medium", prompt2, parts2, digestSchema);
       digest = mergeReadings(l.pages, digest, reread.pages);
-      const left = readingIssues(l.pages, digest);
+      const left = readingIssues(l.pages, digest, renderTex);
       log(`    after re-reading: ${left.length ? `${left.length} issue(s) left` : "all pages pass"}`);
     }
     digests[l.sha256] = digest;
