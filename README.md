@@ -2,34 +2,20 @@
 
 **LecNote is a macOS app for studying from lecture PDFs. During this hackathon I built its one-click pipeline that turns a course's slides into a knowledge structure and a formula sheet, every item traceable to the slide page it came from, running on Meta's Muse Spark 1.3 and Muse Wonder with code checks after every model call.**
 
+I'm a master's student learning in English, my second language. An AI summary that rephrases a lecture is hard to trust in a second language, so everything the pipeline produces points back to a slide page, and code checks that the quoted words are really there.
+
 Meta Global AI Developer Hackathon · Indie Developer track · Build for Your World · Demo video: [`demo/lecnote-demo.mp4`](demo/lecnote-demo.mp4)
 
 ---
 
-## What was pre-existing and what was built during the hackathon
+## What was built during the hackathon, and what was pre-existing
 
-Building period: Oct 26 – Nov 4, 2026 (US Eastern). LecNote's first commit was Oct 16, 2026.
+Building period: Oct 26 – Nov 4, 2026 (US Eastern).
 
-| Area | Pre-existing (before Oct 26) | Built during the hackathon | Code |
-|---|---|---|---|
-| **One-click generation of a knowledge structure and formula sheet** | – | The whole pipeline: 22 stages, prompts, JSON schemas, code checks, automatic repairs, checkpoints, cost ledger, preview-then-adopt | Core: **this repo** (`src/core`). Desktop runner and screens: private app |
-| **Meta integration** | – | Meta Model API transport and model routing; the hackathon build of the app calls Meta's models only | CLI: **this repo** (`src/meta`, `src/cli`). Desktop: private app |
-| Knowledge map and formula sheet views | – | Knowledge map viewer; Chinese/English switch and revealable key points; formula sheet with collapsible groups | Private app |
-| Open questions | – | A course-wide page of open questions, answered and marked resolved in place | Private app |
-| Ask AI | Ask about a selection with the lecture as context | Short answers that end with points to expand; attach pictures to a question; an explanation language separate from the interface language | Private app |
-| Reader and notes | PDF reader, typed notes beside the slides, same-sized blank pages inserted after a slide | – | Private app |
-
-**This repository contains only work done during the event.** The desktop app's code is interwoven with the pre-existing reader, so it stays in my private LecNote repository and is shown in the demo video. Here, the generation core runs on its own, through a command-line runner on Meta's models, with a mock mode that needs no API key. No pre-hackathon code or git history is included: two small pieces the core needs, the `ExamInfo` type (`src/core/course.ts`) and a lecture-title helper (`src/core/library.ts`), were written again for this repo instead of being copied.
-
-## Why I built it
-
-I'm a master's student studying abroad in English, which is not my first language. Learning a subject this way takes three steps, and LecNote is built around them:
-
-1. **Understand a hard part.** I select a sentence, formula or diagram I don't follow and ask AI with the surrounding lecture as context, or attach a picture. The answer starts short, with points I can expand when I need more. The explanation language can differ from the interface language, for example an English interface with explanations in Chinese while technical terms stay as the slides write them.
-2. **Keep my understanding next to the source.** I type my own explanation beside the slide, and insert a same-sized blank page after it when a derivation needs more room. The original PDF is never changed.
-3. **Connect the pieces into a course.** The knowledge structure links concepts across lectures. The formula sheet ties each formula to its concept, with what its symbols mean, when it holds and where it comes from. The open-questions page keeps track of what I haven't understood yet.
-
-Step 3 is what this hackathon was about. When English is your second language, an AI summary that rephrases the lecture is hard to trust, so every concept, quote and formula the pipeline produces points back to a slide page, and code checks that the quoted words are really on that page.
+- **Built during the hackathon, in this repo:** the generation core (22 stages: prompts, JSON schemas, code checks, automatic repairs), the Meta Model API transport and model routing, the command-line runner, the sample course and the recorded runs.
+- **Pre-existing, not in this repo:** LecNote, my macOS app for reading lecture PDFs and taking notes (first commit Oct 16, 2026). The app's screens that run this pipeline are in my private repository, because they are interwoven with the pre-existing app; they are shown in the demo video.
+- **Running without the app:** the command-line runner calls Meta's models directly, and `npm run demo:mock` replays a recorded run without an API key.
+- No pre-hackathon code or git history is included. Two small pieces the core needs, the `ExamInfo` type (`src/core/course.ts`) and a lecture-title helper (`src/core/library.ts`), were written again for this repo instead of being copied.
 
 ## The generation pipeline on Meta's models
 
@@ -69,14 +55,7 @@ This is a workflow demonstration on small original material, not a full-course b
 
 **2. The command-line runner in this repo** (`runs/2026-11-04-meta/`), on the 2-lecture, 10-page sample in `samples/`:
 
-| Call | Model | Effort | Tokens in / out | Cost | Time |
-|---|---|---|---|---|---|
-| read L1 | muse-spark-1.3 | low | 1,467 / 1,319 | $0.0074 | 11.9 s |
-| read L2 | muse-spark-1.3 | low | 1,538 / 2,085 | $0.0108 | 19.6 s |
-| plan the map | muse-wonder-1.0 | high | 3,752 / 4,665 | $0.1083 | 29.4 s |
-| repair the plan | muse-wonder-1.0 | high | 5,383 / 3,410 | $0.0897 | 19.5 s |
-
-Every page reading passed the code checks, and every formula rendered. Wonder's first plan matched its JSON schema but failed 19 structural checks, mostly concepts not attached to any branch. One repair call fixed all of them: 3 threads, 7 strands, 17 concepts with home pages, and a 12-step tour. `npm run demo:mock` replays exactly these answers.
+4 calls: Muse Spark 1.3 read the two lectures ($0.02), Muse Wonder planned the map and repaired it ($0.20); $0.22 and 80 s in total. Every page reading passed the code checks, and every formula rendered. Wonder's first plan matched its JSON schema but failed 19 structural checks, mostly concepts not attached to any branch. One repair call fixed all of them: 3 threads, 7 strands, 17 concepts with home pages, and a 12-step tour. `npm run demo:mock` replays exactly these answers.
 
 ## Run it
 
@@ -117,25 +96,6 @@ runs/2026-11-04-desktop/   recorded run 1: audit, report, cost ledger, reference
 runs/2026-11-04-meta/   recorded run 2: readings, plan, answers, cost ledger
 demo/lecnote-demo.mp4   the demo video
 ```
-
-## Where this code comes from
-
-The generation core was written in LecNote's private repository during the event and copied here without its history. These are its commits (US Eastern time):
-
-| Date | Commit | |
-|---|---|---|
-| Oct 26 12:00 | `b027859` | the knowledge-map format (and its viewer in the app) |
-| Oct 27 10:38 | `1c7b1f0` | the formula sheet |
-| Oct 27 16:45 | `ab989c0` | groundwork: format specs and checkers |
-| Oct 27 17:40 | `6e200b7` | the pure core: checks, patch ops, schemas, prompts, stages |
-| Oct 27 18:49 | `d0b5fbc` | every build stage run end to end on canned answers |
-| Oct 27 21:23 | `ea7ffac` | transport and page inventory (desktop app) |
-| Oct 27 23:04 | `f6d2939` | the job runner, the map and sheet pipelines (desktop app) |
-| Oct 28 02:15 | `690853b` | the generation UI (desktop app) |
-| Nov 4 12:31 | `4c421c6` | the app's hackathon build calls Meta's models only (desktop app) |
-| Nov 4 | this repo | the Meta transport, the command-line runner, the sample course and the recorded runs |
-
-Not included: the slides and hand-made maps of the real course I tested on, which are my lecturer's copyrighted material, and the pre-existing LecNote app.
 
 ## License
 
