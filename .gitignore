@@ -1,0 +1,6 @@
+node_modules/
+out/
+out-mock/
+.env
+*.log
+.DS_Store

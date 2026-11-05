@@ -1,0 +1,21 @@
+{
+  "name": "lecnote-gen-meta",
+  "version": "0.1.0",
+  "private": true,
+  "description": "LecNote one-click course generation (knowledge map + formula sheet pipeline) running on Meta's Muse Spark 1.3 and Muse Wonder.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "generate": "tsx src/cli/generate.ts samples/course.json",
+    "demo:mock": "tsx src/cli/generate.ts samples/course.json --mock --out out-mock",
+    "typecheck": "tsc -p .",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "~5.7.2",
+    "vitest": "^3.0.0"
+  },
+  "engines": { "node": ">=20" }
+}

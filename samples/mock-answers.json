@@ -1,0 +1,553 @@
+{
+ "gen.read.L1": {
+  "pages": [
+   {
+    "page": 1,
+    "kind": "title",
+    "title": "Lecture 1: Gradient Descent",
+    "formulas": [],
+    "figureKind": "none",
+    "figureText": "",
+    "edges": [],
+    "teacherQuestion": "",
+    "roadmapItems": [],
+    "terms": []
+   },
+   {
+    "page": 2,
+    "kind": "outline",
+    "title": "Today",
+    "formulas": [],
+    "figureKind": "none",
+    "figureText": "",
+    "edges": [],
+    "teacherQuestion": "",
+    "roadmapItems": [
+     "Loss functions and what we minimise",
+     "The gradient descent update",
+     "Choosing the learning rate"
+    ],
+    "terms": []
+   },
+   {
+    "page": 3,
+    "kind": "formula",
+    "title": "Loss functions",
+    "formulas": [
+     {
+      "tex": "L(\\theta) = \\frac{1}{n} \\sum_i \\ell(f(x_i; \\theta), y_i)",
+      "what": "empirical risk"
+     },
+     {
+      "tex": "\\ell(\\hat{y}, y) = (\\hat{y} - y)^2",
+      "what": "squared loss"
+     }
+    ],
+    "figureKind": "none",
+    "figureText": "",
+    "edges": [],
+    "teacherQuestion": "",
+    "roadmapItems": [],
+    "terms": [
+     "empirical risk",
+     "squared loss"
+    ]
+   },
+   {
+    "page": 4,
+    "kind": "formula",
+    "title": "The gradient descent update",
+    "formulas": [
+     {
+      "tex": "\\theta_{t+1} = \\theta_t - \\eta \\nabla L(\\theta_t)",
+      "what": "gradient descent update"
+     }
+    ],
+    "figureKind": "none",
+    "figureText": "",
+    "edges": [],
+    "teacherQuestion": "",
+    "roadmapItems": [],
+    "terms": [
+     "learning rate",
+     "step size",
+     "gradient"
+    ]
+   },
+   {
+    "page": 5,
+    "kind": "content",
+    "title": "Choosing the learning rate",
+    "formulas": [
+     {
+      "tex": "\\eta \\le 1/L",
+      "what": "step size bound for an L-smooth loss"
+     }
+    ],
+    "figureKind": "none",
+    "figureText": "",
+    "edges": [],
+    "teacherQuestion": "what happens to the iterates if η = 2/L on a quadratic?",
+    "roadmapItems": [],
+    "terms": [
+     "L-smooth"
+    ]
+   }
+  ]
+ },
+ "gen.read.L2": {
+  "pages": [
+   {
+    "page": 1,
+    "kind": "title",
+    "title": "Lecture 2: Momentum and Adam",
+    "formulas": [],
+    "figureKind": "none",
+    "figureText": "",
+    "edges": [],
+    "teacherQuestion": "",
+    "roadmapItems": [],
+    "terms": []
+   },
+   {
+    "page": 2,
+    "kind": "recap",
+    "title": "Recap of Lecture 1",
+    "formulas": [
+     {
+      "tex": "\\theta_{t+1} = \\theta_t - \\eta \\nabla L(\\theta_t)",
+      "what": "gradient descent"
+     }
+    ],
+    "figureKind": "none",
+    "figureText": "",
+    "edges": [],
+    "teacherQuestion": "",
+    "roadmapItems": [
+     "Gradient descent",
+     "The learning rate controls stability"
+    ],
+    "terms": []
+   },
+   {
+    "page": 3,
+    "kind": "formula",
+    "title": "Momentum",
+    "formulas": [
+     {
+      "tex": "v_{t+1} = \\beta v_t + \\nabla L(\\theta_t)",
+      "what": "velocity"
+     },
+     {
+      "tex": "\\theta_{t+1} = \\theta_t - \\eta v_{t+1}",
+      "what": "momentum update"
+     }
+    ],
+    "figureKind": "none",
+    "figureText": "",
+    "edges": [],
+    "teacherQuestion": "",
+    "roadmapItems": [],
+    "terms": [
+     "momentum"
+    ]
+   },
+   {
+    "page": 4,
+    "kind": "formula",
+    "title": "Adam",
+    "formulas": [
+     {
+      "tex": "m_t = \\beta_1 m_{t-1} + (1 - \\beta_1) g_t",
+      "what": "first moment"
+     },
+     {
+      "tex": "v_t = \\beta_2 v_{t-1} + (1 - \\beta_2) g_t^2",
+      "what": "second moment"
+     },
+     {
+      "tex": "\\theta_{t+1} = \\theta_t - \\eta \\hat{m}_t / (\\sqrt{\\hat{v}_t} + \\epsilon)",
+      "what": "Adam update"
+     }
+    ],
+    "figureKind": "none",
+    "figureText": "",
+    "edges": [],
+    "teacherQuestion": "",
+    "roadmapItems": [],
+    "terms": [
+     "Adam",
+     "bias correction"
+    ]
+   },
+   {
+    "page": 5,
+    "kind": "content",
+    "title": "Momentum vs Adam",
+    "formulas": [],
+    "figureKind": "none",
+    "figureText": "",
+    "edges": [],
+    "teacherQuestion": "",
+    "roadmapItems": [],
+    "terms": []
+   }
+  ]
+ },
+ "gen.map.blueprint": {
+  "threads": [
+   {
+    "id": "objective",
+    "title": "What we minimise",
+    "question": "What does training optimise?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 1,
+     "page": 2
+    }
+   },
+   {
+    "id": "first-order",
+    "title": "Gradient descent and its step size",
+    "question": "How do we move downhill, and how far?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 1,
+     "page": 2
+    }
+   },
+   {
+    "id": "beyond-gd",
+    "title": "Methods that build on gradient descent",
+    "question": "How can past gradients make steps better?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 2,
+     "page": 2
+    }
+   }
+  ],
+  "strands": [
+   {
+    "id": "risk",
+    "parent": "objective",
+    "title": "Empirical risk",
+    "question": "Which loss is averaged?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 0,
+     "page": 0
+    }
+   },
+   {
+    "id": "losses",
+    "parent": "objective",
+    "title": "Example losses",
+    "question": "What does a loss compare?",
+    "origin": "ai",
+    "anchorRef": {
+     "lecture": 0,
+     "page": 0
+    }
+   },
+   {
+    "id": "update",
+    "parent": "first-order",
+    "title": "The update rule",
+    "question": "Which way and how far?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 0,
+     "page": 0
+    }
+   },
+   {
+    "id": "step-size",
+    "parent": "first-order",
+    "title": "Choosing the learning rate",
+    "question": "When does a step not overshoot?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 0,
+     "page": 0
+    }
+   },
+   {
+    "id": "momentum-s",
+    "parent": "beyond-gd",
+    "title": "Momentum",
+    "question": "How does averaging gradients help?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 0,
+     "page": 0
+    }
+   },
+   {
+    "id": "adaptive",
+    "parent": "beyond-gd",
+    "title": "Adaptive steps",
+    "question": "Why a step size per parameter?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 0,
+     "page": 0
+    }
+   }
+  ],
+  "concepts": [
+   {
+    "id": "empirical-risk",
+    "parent": "risk",
+    "term": "Empirical risk",
+    "homeLecture": 1,
+    "homePage": 3
+   },
+   {
+    "id": "squared-loss",
+    "parent": "losses",
+    "term": "Squared loss",
+    "homeLecture": 1,
+    "homePage": 3
+   },
+   {
+    "id": "gd-update",
+    "parent": "update",
+    "term": "Gradient descent update",
+    "homeLecture": 1,
+    "homePage": 4
+   },
+   {
+    "id": "learning-rate",
+    "parent": "step-size",
+    "term": "Learning rate",
+    "homeLecture": 1,
+    "homePage": 4
+   },
+   {
+    "id": "smoothness-bound",
+    "parent": "step-size",
+    "term": "Step size bound η ≤ 1/L",
+    "homeLecture": 1,
+    "homePage": 5
+   },
+   {
+    "id": "momentum",
+    "parent": "momentum-s",
+    "term": "Momentum",
+    "homeLecture": 2,
+    "homePage": 3
+   },
+   {
+    "id": "adam",
+    "parent": "adaptive",
+    "term": "Adam",
+    "homeLecture": 2,
+    "homePage": 4
+   },
+   {
+    "id": "bias-correction",
+    "parent": "adaptive",
+    "term": "Bias correction",
+    "homeLecture": 2,
+    "homePage": 4
+   }
+  ],
+  "tour": [
+   {
+    "node": "",
+    "title": "From a loss to an optimiser"
+   },
+   {
+    "node": "objective",
+    "title": "Start with what we minimise"
+   },
+   {
+    "node": "first-order",
+    "title": "Step downhill"
+   },
+   {
+    "node": "beyond-gd",
+    "title": "Use the history of gradients"
+   }
+  ]
+ },
+ "gen.map.blueprint.repair": {
+  "threads": [
+   {
+    "id": "objective",
+    "title": "What we minimise",
+    "question": "What does training optimise?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 1,
+     "page": 2
+    }
+   },
+   {
+    "id": "first-order",
+    "title": "Gradient descent and its step size",
+    "question": "How do we move downhill, and how far?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 1,
+     "page": 2
+    }
+   },
+   {
+    "id": "beyond-gd",
+    "title": "Methods that build on gradient descent",
+    "question": "How can past gradients make steps better?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 2,
+     "page": 2
+    }
+   }
+  ],
+  "strands": [
+   {
+    "id": "risk",
+    "parent": "objective",
+    "title": "Empirical risk",
+    "question": "Which loss is averaged?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 0,
+     "page": 0
+    }
+   },
+   {
+    "id": "losses",
+    "parent": "objective",
+    "title": "Example losses",
+    "question": "What does a loss compare?",
+    "origin": "ai",
+    "anchorRef": {
+     "lecture": 0,
+     "page": 0
+    }
+   },
+   {
+    "id": "update",
+    "parent": "first-order",
+    "title": "The update rule",
+    "question": "Which way and how far?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 0,
+     "page": 0
+    }
+   },
+   {
+    "id": "step-size",
+    "parent": "first-order",
+    "title": "Choosing the learning rate",
+    "question": "When does a step not overshoot?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 0,
+     "page": 0
+    }
+   },
+   {
+    "id": "momentum-s",
+    "parent": "beyond-gd",
+    "title": "Momentum",
+    "question": "How does averaging gradients help?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 0,
+     "page": 0
+    }
+   },
+   {
+    "id": "adaptive",
+    "parent": "beyond-gd",
+    "title": "Adaptive steps",
+    "question": "Why a step size per parameter?",
+    "origin": "teacher",
+    "anchorRef": {
+     "lecture": 0,
+     "page": 0
+    }
+   }
+  ],
+  "concepts": [
+   {
+    "id": "empirical-risk",
+    "parent": "risk",
+    "term": "Empirical risk",
+    "homeLecture": 1,
+    "homePage": 3
+   },
+   {
+    "id": "squared-loss",
+    "parent": "losses",
+    "term": "Squared loss",
+    "homeLecture": 1,
+    "homePage": 3
+   },
+   {
+    "id": "gd-update",
+    "parent": "update",
+    "term": "Gradient descent update",
+    "homeLecture": 1,
+    "homePage": 4
+   },
+   {
+    "id": "learning-rate",
+    "parent": "step-size",
+    "term": "Learning rate",
+    "homeLecture": 1,
+    "homePage": 4
+   },
+   {
+    "id": "smoothness-bound",
+    "parent": "step-size",
+    "term": "Step size bound η ≤ 1/L",
+    "homeLecture": 1,
+    "homePage": 5
+   },
+   {
+    "id": "momentum",
+    "parent": "momentum-s",
+    "term": "Momentum",
+    "homeLecture": 2,
+    "homePage": 3
+   },
+   {
+    "id": "adam",
+    "parent": "adaptive",
+    "term": "Adam",
+    "homeLecture": 2,
+    "homePage": 4
+   },
+   {
+    "id": "bias-correction",
+    "parent": "adaptive",
+    "term": "Bias correction",
+    "homeLecture": 2,
+    "homePage": 4
+   }
+  ],
+  "tour": [
+   {
+    "node": "",
+    "title": "From a loss to an optimiser"
+   },
+   {
+    "node": "objective",
+    "title": "Start with what we minimise"
+   },
+   {
+    "node": "first-order",
+    "title": "Step downhill"
+   },
+   {
+    "node": "beyond-gd",
+    "title": "Use the history of gradients"
+   }
+  ]
+ }
+}

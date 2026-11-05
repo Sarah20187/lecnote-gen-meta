@@ -1,0 +1,32 @@
+{
+  "about": "A small original sample course, written for this repository (no third-party slides). Page text stands in for the PDF text layer LecNote extracts from real lecture decks.",
+  "title": "Optimisation for Machine Learning (sample)",
+  "lectures": [
+    {
+      "no": 1,
+      "title": "L1 – Gradient Descent",
+      "file": "slides/L1-gradient-descent.pdf",
+      "pages": [
+        { "page": 1, "text": "Lecture 1: Gradient Descent\nOptimisation for Machine Learning" },
+        { "page": 2, "text": "Today\n1. Loss functions and what we minimise\n2. The gradient descent update\n3. Choosing the learning rate" },
+        { "page": 3, "text": "Loss functions\nWe fit parameters θ by minimising the empirical risk\nL(θ) = (1/n) Σ_i ℓ(f(x_i; θ), y_i)\nExample: squared loss ℓ(ŷ, y) = (ŷ − y)²" },
+        { "page": 4, "text": "The gradient descent update\nθ_{t+1} = θ_t − η ∇L(θ_t)\nη is the learning rate (step size).\nThe gradient points uphill, so we step the other way." },
+        { "page": 5, "text": "Choosing the learning rate\nToo small: slow progress. Too large: the loss oscillates or diverges.\nFor an L-smooth loss, η ≤ 1/L guarantees the loss does not increase.\nQuestion: what happens to the iterates if η = 2/L on a quadratic?" }
+      ]
+    },
+    {
+      "no": 2,
+      "title": "L2 – Momentum and Adam",
+      "file": "slides/L2-momentum-adam.pdf",
+      "pages": [
+        { "page": 1, "text": "Lecture 2: Momentum and Adam\nOptimisation for Machine Learning" },
+        { "page": 2, "text": "Recap of Lecture 1\n- Gradient descent: θ_{t+1} = θ_t − η ∇L(θ_t)\n- The learning rate controls stability\nToday: methods that build on gradient descent" },
+        { "page": 3, "text": "Momentum\nv_{t+1} = β v_t + ∇L(θ_t)\nθ_{t+1} = θ_t − η v_{t+1}\nβ ∈ [0, 1) averages past gradients and damps oscillation in narrow valleys." },
+        { "page": 4, "text": "Adam\nm_t = β1 m_{t−1} + (1 − β1) g_t\nv_t = β2 v_{t−1} + (1 − β2) g_t²\nθ_{t+1} = θ_t − η m̂_t / (√v̂_t + ε)\nAdaptive per-parameter step sizes; bias correction m̂_t = m_t / (1 − β1^t)." },
+        { "page": 5, "text": "Momentum vs Adam\nMomentum: one global learning rate, smooths the direction.\nAdam: rescales each coordinate by its gradient history.\nBoth reduce to gradient descent for β = 0 (and β1 = β2 = 0, ε → 0 for Adam, up to scaling)." }
+      ]
+    }
+  ],
+  "exams": [{ "exam": "final", "date": "", "form": "written, closed book", "language": "en", "files": [] }],
+  "note": ""
+}
