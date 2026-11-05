@@ -1,0 +1,205 @@
+{
+  "5e88a718895c639080abeb7e6edc86383fee335ae9b6e790d8f93600477d1868": [
+    {
+      "edges": [],
+      "figureKind": "none",
+      "figureText": "",
+      "formulas": [],
+      "kind": "title",
+      "page": 1,
+      "roadmapItems": [],
+      "teacherQuestion": "",
+      "terms": [],
+      "title": "Lecture 1: Gradient Descent"
+    },
+    {
+      "edges": [],
+      "figureKind": "none",
+      "figureText": "",
+      "formulas": [],
+      "kind": "outline",
+      "page": 2,
+      "roadmapItems": [
+        "Loss functions and what we minimise",
+        "The gradient descent update",
+        "Choosing the learning rate"
+      ],
+      "teacherQuestion": "",
+      "terms": [],
+      "title": "Today"
+    },
+    {
+      "edges": [],
+      "figureKind": "none",
+      "figureText": "",
+      "formulas": [
+        {
+          "tex": "L(\\theta) = \\frac{1}{n} \\sum_i \\ell(f(x_i; \\theta), y_i)",
+          "what": "empirical risk"
+        },
+        {
+          "tex": "\\ell(\\hat{y}, y) = (\\hat{y} - y)^2",
+          "what": "squared loss"
+        }
+      ],
+      "kind": "content",
+      "page": 3,
+      "roadmapItems": [],
+      "teacherQuestion": "",
+      "terms": [
+        "empirical risk",
+        "squared loss"
+      ],
+      "title": "Loss functions"
+    },
+    {
+      "edges": [],
+      "figureKind": "none",
+      "figureText": "",
+      "formulas": [
+        {
+          "tex": "\\theta_{t+1} = \\theta_t - \\eta \\nabla L(\\theta_t)",
+          "what": "gradient descent update"
+        }
+      ],
+      "kind": "formula",
+      "page": 4,
+      "roadmapItems": [],
+      "teacherQuestion": "",
+      "terms": [
+        "gradient descent",
+        "learning rate"
+      ],
+      "title": "The gradient descent update"
+    },
+    {
+      "edges": [],
+      "figureKind": "none",
+      "figureText": "",
+      "formulas": [
+        {
+          "tex": "\\eta \\le 1/L",
+          "what": "step-size rule for an L-smooth loss"
+        }
+      ],
+      "kind": "question",
+      "page": 5,
+      "roadmapItems": [],
+      "teacherQuestion": "what happens to the iterates if η = 2/L on a quadratic?",
+      "terms": [
+        "learning rate",
+        "L-smooth loss"
+      ],
+      "title": "Choosing the learning rate"
+    }
+  ],
+  "83286d6ccd7a7127eb0c6a761c95e2aa00f7d49b48022a2217cc807af25ed43a": [
+    {
+      "edges": [],
+      "figureKind": "none",
+      "figureText": "",
+      "formulas": [],
+      "kind": "title",
+      "page": 1,
+      "roadmapItems": [],
+      "teacherQuestion": "",
+      "terms": [],
+      "title": "Lecture 2: Momentum and Adam"
+    },
+    {
+      "edges": [],
+      "figureKind": "none",
+      "figureText": "",
+      "formulas": [
+        {
+          "tex": "\\theta_{t+1} = \\theta_t - \\eta \\nabla L(\\theta_t)",
+          "what": "gradient descent update"
+        }
+      ],
+      "kind": "recap",
+      "page": 2,
+      "roadmapItems": [
+        "Gradient descent: θ_{t+1} = θ_t − η ∇L(θ_t)",
+        "The learning rate controls stability",
+        "Today: methods that build on gradient descent"
+      ],
+      "teacherQuestion": "",
+      "terms": [
+        "Gradient descent",
+        "learning rate"
+      ],
+      "title": "Recap of Lecture 1"
+    },
+    {
+      "edges": [],
+      "figureKind": "none",
+      "figureText": "",
+      "formulas": [
+        {
+          "tex": "v_{t+1} = \\beta v_t + \\nabla L(\\theta_t)",
+          "what": "momentum velocity update"
+        },
+        {
+          "tex": "\\theta_{t+1} = \\theta_t - \\eta v_{t+1}",
+          "what": "parameter update"
+        }
+      ],
+      "kind": "formula",
+      "page": 3,
+      "roadmapItems": [],
+      "teacherQuestion": "",
+      "terms": [
+        "Momentum"
+      ],
+      "title": "Momentum"
+    },
+    {
+      "edges": [],
+      "figureKind": "none",
+      "figureText": "",
+      "formulas": [
+        {
+          "tex": "m_t = \\beta_1 m_{t-1} + (1 - \\beta_1) g_t",
+          "what": "first moment estimate"
+        },
+        {
+          "tex": "v_t = \\beta_2 v_{t-1} + (1 - \\beta_2) g_t^2",
+          "what": "second moment estimate"
+        },
+        {
+          "tex": "\\theta_{t+1} = \\theta_t - \\eta \\hat{m}_t / (\\sqrt{\\hat{v}_t} + \\varepsilon)",
+          "what": "parameter update"
+        },
+        {
+          "tex": "\\hat{m}_t = m_t / (1 - \\beta_1^t)",
+          "what": "bias correction"
+        }
+      ],
+      "kind": "formula",
+      "page": 4,
+      "roadmapItems": [],
+      "teacherQuestion": "",
+      "terms": [
+        "Adam",
+        "bias correction"
+      ],
+      "title": "Adam"
+    },
+    {
+      "edges": [],
+      "figureKind": "none",
+      "figureText": "",
+      "formulas": [],
+      "kind": "content",
+      "page": 5,
+      "roadmapItems": [],
+      "teacherQuestion": "",
+      "terms": [
+        "Momentum",
+        "Adam",
+        "gradient descent"
+      ],
+      "title": "Momentum vs Adam"
+    }
+  ]
+}

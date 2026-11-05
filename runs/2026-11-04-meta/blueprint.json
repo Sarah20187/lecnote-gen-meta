@@ -1,0 +1,284 @@
+{
+  "concepts": [
+    {
+      "homeLecture": 1,
+      "homePage": 3,
+      "id": "empirical-risk",
+      "parent": "A1",
+      "term": "empirical risk"
+    },
+    {
+      "homeLecture": 1,
+      "homePage": 3,
+      "id": "squared-loss",
+      "parent": "A1",
+      "term": "squared loss"
+    },
+    {
+      "homeLecture": 1,
+      "homePage": 4,
+      "id": "gradient-direction",
+      "parent": "A2",
+      "term": "gradient"
+    },
+    {
+      "homeLecture": 1,
+      "homePage": 4,
+      "id": "gradient-descent-update",
+      "parent": "A2",
+      "term": "gradient descent"
+    },
+    {
+      "homeLecture": 1,
+      "homePage": 4,
+      "id": "learning-rate",
+      "parent": "B1",
+      "term": "learning rate / step size"
+    },
+    {
+      "homeLecture": 1,
+      "homePage": 5,
+      "id": "loss-oscillation-divergence",
+      "parent": "B1",
+      "term": "oscillates or diverges"
+    },
+    {
+      "homeLecture": 1,
+      "homePage": 5,
+      "id": "l-smooth-loss",
+      "parent": "B2",
+      "term": "L-smooth loss"
+    },
+    {
+      "homeLecture": 1,
+      "homePage": 5,
+      "id": "l-smooth-step-size-rule",
+      "parent": "B2",
+      "term": "step-size rule"
+    },
+    {
+      "homeLecture": 2,
+      "homePage": 3,
+      "id": "momentum-velocity-update",
+      "parent": "C1",
+      "term": "Momentum"
+    },
+    {
+      "homeLecture": 2,
+      "homePage": 3,
+      "id": "momentum-coefficient",
+      "parent": "C1",
+      "term": "Momentum coefficient β"
+    },
+    {
+      "homeLecture": 2,
+      "homePage": 4,
+      "id": "adam-first-moment-estimate",
+      "parent": "C2",
+      "term": "first moment estimate"
+    },
+    {
+      "homeLecture": 2,
+      "homePage": 4,
+      "id": "adam-second-moment-estimate",
+      "parent": "C2",
+      "term": "second moment estimate"
+    },
+    {
+      "homeLecture": 2,
+      "homePage": 4,
+      "id": "bias-correction",
+      "parent": "C2",
+      "term": "bias correction"
+    },
+    {
+      "homeLecture": 2,
+      "homePage": 4,
+      "id": "adaptive-per-parameter-step-sizes",
+      "parent": "C3",
+      "term": "adaptive per-parameter step sizes"
+    },
+    {
+      "homeLecture": 2,
+      "homePage": 4,
+      "id": "adam-parameter-update",
+      "parent": "C3",
+      "term": "Adam"
+    },
+    {
+      "homeLecture": 2,
+      "homePage": 5,
+      "id": "momentum-adam-comparison",
+      "parent": "C3",
+      "term": "Momentum vs Adam"
+    },
+    {
+      "homeLecture": 2,
+      "homePage": 5,
+      "id": "reduction-to-gradient-descent",
+      "parent": "C3",
+      "term": "gradient descent"
+    }
+  ],
+  "strands": [
+    {
+      "anchorRef": {
+        "lecture": 1,
+        "page": 2
+      },
+      "id": "A1",
+      "origin": "teacher",
+      "parent": "A",
+      "question": "经验风险由什么构成，单个样本的 loss 怎样写？",
+      "title": "最小化的目标"
+    },
+    {
+      "anchorRef": {
+        "lecture": 1,
+        "page": 2
+      },
+      "id": "A2",
+      "origin": "teacher",
+      "parent": "A",
+      "question": "梯度指向哪里，参数 θ 怎样沿反方向更新？",
+      "title": "梯度下降一步"
+    },
+    {
+      "anchorRef": {
+        "lecture": 1,
+        "page": 2
+      },
+      "id": "B1",
+      "origin": "teacher",
+      "parent": "B",
+      "question": "学习率 η 过小或过大时，迭代进程分别会怎样？",
+      "title": "学习率的取舍"
+    },
+    {
+      "anchorRef": {
+        "lecture": 1,
+        "page": 2
+      },
+      "id": "B2",
+      "origin": "teacher",
+      "parent": "B",
+      "question": "对 L-smooth loss，η 满足什么条件才保证 loss 不增加？",
+      "title": "L-smooth 步长界"
+    },
+    {
+      "anchorRef": {
+        "lecture": 2,
+        "page": 2
+      },
+      "id": "C1",
+      "origin": "teacher",
+      "parent": "C",
+      "question": "Momentum 怎样用速度 v 累积过去梯度并抑制窄谷中的振荡？",
+      "title": "Momentum 平滑方向"
+    },
+    {
+      "anchorRef": {
+        "lecture": 2,
+        "page": 2
+      },
+      "id": "C2",
+      "origin": "teacher",
+      "parent": "C",
+      "question": "Adam 怎样估计一阶矩和二阶矩，并作 bias correction？",
+      "title": "Adam 的矩估计"
+    },
+    {
+      "anchorRef": {
+        "lecture": 2,
+        "page": 2
+      },
+      "id": "C3",
+      "origin": "teacher",
+      "parent": "C",
+      "question": "Adam 怎样逐坐标缩放步长，Momentum 与 Adam 何时退化为梯度下降？",
+      "title": "自适应步长与退化"
+    }
+  ],
+  "threads": [
+    {
+      "anchorRef": {
+        "lecture": 1,
+        "page": 2
+      },
+      "id": "A",
+      "origin": "teacher",
+      "question": "我们要最小化什么目标，又怎样用梯度下降迈出一步？",
+      "title": "目标与梯度下降"
+    },
+    {
+      "anchorRef": {
+        "lecture": 1,
+        "page": 2
+      },
+      "id": "B",
+      "origin": "teacher",
+      "question": "学习率 η 应当怎样选，才能兼顾速度与稳定性？",
+      "title": "学习率与稳定性"
+    },
+    {
+      "anchorRef": {
+        "lecture": 2,
+        "page": 2
+      },
+      "id": "C",
+      "origin": "teacher",
+      "question": "Momentum 与 Adam 怎样在梯度下降之上利用梯度历史改进更新？",
+      "title": "利用梯度历史"
+    }
+  ],
+  "tour": [
+    {
+      "node": "",
+      "title": "课程总览"
+    },
+    {
+      "node": "A",
+      "title": "目标与梯度下降"
+    },
+    {
+      "node": "A1",
+      "title": "最小化经验风险"
+    },
+    {
+      "node": "A2",
+      "title": "沿负梯度更新"
+    },
+    {
+      "node": "B",
+      "title": "学习率与稳定性"
+    },
+    {
+      "node": "B1",
+      "title": "学习率过大过小"
+    },
+    {
+      "node": "B2",
+      "title": "L-smooth 步长界"
+    },
+    {
+      "node": "C",
+      "title": "利用梯度历史"
+    },
+    {
+      "node": "C1",
+      "title": "Momentum 平滑方向"
+    },
+    {
+      "node": "C2",
+      "title": "Adam 的矩估计"
+    },
+    {
+      "node": "C3",
+      "title": "自适应与退化关系"
+    },
+    {
+      "node": "",
+      "title": "易混点与回忆方法"
+    }
+  ]
+}

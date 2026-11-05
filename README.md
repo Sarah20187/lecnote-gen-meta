@@ -45,7 +45,8 @@ Requires Node 20+.
 ```bash
 npm install
 
-# 1. Without an API key: replays saved answers, runs all the code checks
+# 1. Without an API key: replays the answers Meta's models gave in the recorded run below,
+#    and runs all the code checks on them
 npm run demo:mock
 
 # 2. On Meta's models
@@ -60,6 +61,19 @@ npm run typecheck
 Options: `npx tsx src/cli/generate.ts <course.json> --budget 2.00 --out out`.
 To run your own course, write a `course.json` like `samples/course.json`: one entry per lecture, with each page's text.
 
+## A recorded run on Meta's models
+
+`runs/2026-11-04-meta/` holds a real run on the sample course (2 lectures, 10 pages), Nov 4, 2026:
+
+| Call | Model | Effort | Tokens in / out | Cost | Time |
+|---|---|---|---|---|---|
+| read L1 | muse-spark-1.3 | low | 1,467 / 1,319 | $0.0074 | 11.9 s |
+| read L2 | muse-spark-1.3 | low | 1,538 / 2,085 | $0.0108 | 19.6 s |
+| plan the map | muse-wonder-1.0 | high | 3,752 / 4,665 | $0.1083 | 29.4 s |
+| repair the plan | muse-wonder-1.0 | high | 5,383 / 3,410 | $0.0897 | 19.5 s |
+
+Every page reading passed the code checks. Wonder's first plan matched its JSON schema but failed 19 structural checks, mostly concepts not attached to any branch. One repair call fixed all of them: the final plan has 3 threads, 7 strands, 17 concepts (each with a home page) and a 12-step tour. Total: 4 calls, $0.22, 80 s of model time. `npm run demo:mock` replays exactly these answers.
+
 ## Repository layout
 
 ```
@@ -70,7 +84,8 @@ src/core/gen/           the generation core: stages, prompts, schemas, checks, a
 src/core/structure.ts   the knowledge-map format                                                                                  [Oct 26]
 src/core/formulas.ts    the formula-sheet format                                                                                  [Oct 27]
 samples/course.json     a small original sample course (2 lectures, 10 pages), written for this repo
-samples/mock-answers.json  saved answers for the mock run
+samples/mock-answers.json  the answers of the recorded Meta run, replayed by the mock mode
+runs/2026-11-04-meta/   the recorded run: readings, plan, answers, cost ledger
 ```
 
 ## Where this code comes from
